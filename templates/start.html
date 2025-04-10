@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blackjack Game</title>
+</head>
+<body style="text-align: center; margin-top: 100px;">
+    <h1>Welcome to Blackjack!</h1>
+    <p>Your hand: {{ player_hand }}</p>
+    <p>Your score: {{ player_score }}</p>
+    
+    <form method="POST">
+        <button type="submit" name="action" value="hit">Hit</button>
+        <button type="submit" name="action" value="stand">Stand</button>
+    </form>
+</body>
+</html>
