@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blackjack Result</title>
+    <style>
+        body {
+            background-color: #1c3f2b;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin-top: 50px;
+        }
+        .card {
+            width: 100px;
+            margin: 10px;
+        }
+        .hand {
+            margin: 20px;
+        }
+        .result {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        .win {
+            color: #00ff66;
+        }
+        .lose {
+            color: #ff4d4d;
+        }
+        .draw {
+            color: #ffffff;
+        }
+        a.button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: black;
+            padding: 12px 28px;
+            margin: 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        a.button:hover {
+            background-color: #b38f2f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="result
+        {% if 'win' in result|lower %}win
+        {% elif 'lose' in result|lower or 'computer wins' in result|lower %}lose
+        {% else %}draw{% endif %}">
+        {{ result }}
+    </h1>
+
+    <div class="hand">
+        <h2>Your Final Hand:</h2>
+        {% for card in player_hand %}
+            <img src="{{ url_for('static', filename='cards/' + card + '.png') }}" alt="{{ card }}" class="card">
+        {% endfor %}
+        <h3>Your Final Score: {{ player_score }}</h3>
+    </div>
+
+    <div class="hand">
+        <h2>Computer's Final Hand:</h2>
+        {% for card in computer_hand %}
+            <img src="{{ url_for('static', filename='cards/' + card + '.png') }}" alt="{{ card }}" class="card">
+        {% endfor %}
+        <h3>Computer's Final Score: {{ computer_score }}</h3>
+    </div>
+
+    <a href="{{ url_for('restart') }}" class="button">Play Again</a>
+</body>
+</html>
