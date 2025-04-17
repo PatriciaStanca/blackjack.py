@@ -19,10 +19,40 @@ Built with **Python** and **Flask**.
 3. **Gameplay:**
    - 🂠 Press **Hit** to draw a card.
    - ✋ Press **Stand** to end your turn.
-   - 🤖 The computer draws its cards.
-   - 🏁 Final results are shown automatically.
+   - 🤖 The computer automatically plays after you stand.
+   - 🏁 Final results are shown instantly.
+
+---
+
+## ⚙️ Requirements
+
+To run this project, you'll need:
+
+- ✅ Python 3.x
+- ✅ Flask
+
+### 💾 Install dependencies
+
+Make sure Python is installed, then install Flask with:
+
+```bash
+pip install flask
+```
 
 ---
 
 ## 🗂 Folder Structure
+
+```bash
+BlackjackProject/
+├── blackjackflask.py        # Main Flask app
+├── static/
+│   └── cards/               # PNG images of playing cards
+├── templates/
+│   ├── start.html           # Game screen
+│   └── result.html          # Result screen
+└── README.md
+```
+
+---
 
